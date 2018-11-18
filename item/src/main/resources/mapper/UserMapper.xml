@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tramp.item.mapper.UserMapper">
+<!-- 	<typeAlias alias="CaseUser" type="com.xtyun.domain.CaseUserBean" /> -->
+	
+	<insert id="saveUser" parameterType="com.tramp.item.pojo.UserDO">
+		<![CDATA[
+		      INSERT INTO t_user (username, nick, age, birthday)
+		      VALUES (#{username}, #{nick}, #{age}, #{brithday});
+		 ]]>
+	</insert>
+	
+	<!-- 查询全部的user信息 -->
+	<select id="listUser" resultType="com.tramp.item.pojo.UserDO">
+		<![CDATA[
+		      select * from t_user;
+		 ]]>
+	</select>
+</mapper>
